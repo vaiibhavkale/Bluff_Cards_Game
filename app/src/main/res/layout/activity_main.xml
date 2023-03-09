@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/parent"
+    android:background="@color/colorAccent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="60sp"
+        android:text="Result"
+        android:visibility="invisible"
+        android:id="@+id/result"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="left"
+        android:layout_below="@+id/result"
+        android:layout_toRightOf="@+id/draw"
+        android:text="0"
+        android:id="@+id/drawNum"
+        android:gravity="center_vertical"
+        android:visibility="invisible"
+        android:textAlignment="center"
+        android:background="@drawable/num_background"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/result"
+        android:id="@+id/draw"
+        android:visibility="invisible"
+        android:background="@drawable/draw"
+        android:onClick="drawCard"
+        android:layout_gravity="left"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:id="@+id/startButton"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:onClick="start"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/playedCard"
+        android:visibility="invisible"
+        android:background="@drawable/fake_play"
+        android:layout_below="@+id/result"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="0"
+        android:layout_toRightOf="@+id/playedCard"
+        android:layout_below="@+id/result"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        android:id="@+id/playedNum"
+        android:gravity="center_vertical"
+        android:background="@drawable/num_background"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:id="@+id/aboutToPlay"
+        android:visibility="invisible"
+        android:layout_above="@+id/cardRecycler"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/innocent"
+        android:text="Innocent"
+        android:layout_marginLeft="200dp"
+        android:visibility="invisible"
+        android:onClick="catchBluff"
+        android:layout_above="@+id/fakePrev"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bluff"
+        android:onClick="catchBluff"
+        android:text="Bluff"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="200dp"
+        android:visibility="invisible"
+        android:layout_above="@+id/fakeNext"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fakePrev"
+        android:layout_marginLeft="200dp"
+        android:visibility="invisible"
+        android:onClick="playCard"
+        android:layout_above="@+id/cardRecycler"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fakeNext"
+        android:onClick="playCard"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="200dp"
+        android:visibility="invisible"
+        android:layout_above="@+id/cardRecycler"/>
+
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        android:id="@+id/recyclerNum"
+        android:gravity="center_vertical"
+        android:layout_above="@+id/cardRecycler"
+        android:background="@drawable/num_background"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cardRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:visibility="invisible">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</RelativeLayout>
